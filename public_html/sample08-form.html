@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>jQuery</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <form method="get" action="http://www.google.com/search">
+            Google検索キーワード:<input name="q" type="text"><br>
+            <input type="submit" value="検索">
+        </form>
+        
+        <div id="log"></div>
+        
+        <script src="js/libs/jquery/jquery.min.js"></script>
+        <script>
+            $(function() {
+                $('form').submit(function() {
+                    $('#log').append('フォームを送信します<br>');
+                });
+                $('form').change(function() {
+                    $('#log').append('フォームの内容が変更されました<br>');
+                });
+                $('input[name=q]').focus(function() {
+                    $('#log').append('テキストボックスがフォーカスを得ました<br>');
+                });
+                $('input[name=q]').blur(function() {
+                    $('#log').append('テキストボックスがフォーカスを失いました<br>');
+                });
+                $('input[type=submit]').focus(function() {
+                    $('#log').append('送信ボタンがフォーカスを得ました<br>');
+                });
+                $('input[type=submit]').blur(function() {
+                    $('#log').append('送信ボタンがフォーカスを失いました<br>');
+                });
+            });
+        </script>
+    </body>
+</html>

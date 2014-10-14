@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>jQuery</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+
+        </style>
+    </head>
+    <body>
+        
+        <textarea rows="10">ここに文字を打ち込んでください</textarea>
+        <div id="log"></div>
+        <script src="js/libs/jquery/jquery.min.js"></script>
+        <script>
+            $(function() {
+                $('textarea').keypress(function() {
+                    $('#log').append("キーが押されました!(keyprsss)<br>");
+                });
+                $('textarea').keydown(function() {
+                    $('#log').append("キーが押されました(keydown)!<br>");
+                });
+                $('textarea').keyup(function() {
+                    $('#log').append("キーが離されました(keyup)!<br>");
+                });
+            });
+        </script>
+    </body>
+</html>

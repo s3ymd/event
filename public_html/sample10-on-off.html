@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>jQuery</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        
+        <input id="click" type="button" value="クリックしてください">
+        <br>
+        <br>
+        <input id="enable" type="button" value="イベントハンドラを設定">
+        <br>
+        <input id="disable" type="button" value="イベントハンドラを解除">
+        
+        <div id="log"></div>
+
+        <script src="js/libs/jquery/jquery.min.js"></script>
+        <script>
+            
+            function message() {
+                alert("クリックされました!");
+            }
+            
+            $(function() {
+                $('#enable').click(function() {
+                    $('#click').on('click', message);
+                    alert("イベントハンドラを設定しました");
+                });
+                $('#disable').click(function() {
+                    $('#click').off('click', message);
+                    alert("イベントハンドラを解除しました");
+                });
+            });
+        </script>
+    </body>
+</html>

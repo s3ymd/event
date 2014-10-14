@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>jQuery</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            #field {
+                width: 100px;
+                border: 1px solid black;
+                margin: 100px;
+            }
+        </style>
+    </head>
+    <body>
+        
+        <div id="field">この領域でマウスボタンをクリックしてください</div>
+        <div id="log"></div>
+        <script src="js/libs/jquery/jquery.min.js"></script>
+        <script>
+            $(function() {
+                $('#field').mousedown(function() {
+                    $('#log').append("マウスのボタンが押されました!<br>");
+                });
+                $('#field').mouseup(function() {
+                    $('#log').append("マウスのボタンが離されました!<br>");
+                });
+                //$('#field').click(function() {
+                //    $('#log').append("マウスのボタンがクリックされました!<br>");
+                //});
+            });
+        </script>
+    </body>
+</html>

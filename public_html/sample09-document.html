@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>jQuery</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+
+        <div id="log"></div>
+
+        <script src="js/libs/jquery/jquery.min.js"></script>
+        <script>
+            $(function() {
+                $(window).load(function() {
+                    $('#log').append('ロードされました<br>');
+                    alert('ロードされました');
+                });
+                $(window).resize(function() {
+                    $('#log').append('リサイズされました<br>');
+                });
+                $(window).scroll(function() {
+                    $('#log').append('スクロールされました<br>');
+                });
+
+                //$(window).unload(function() {
+                //    alert('アンロードされます(jQuery)');
+                //    $('#log').append('unload<br>');
+                //});
+                
+                $(window).on('beforeunload', function() {
+                    $('#log').append('アンロードされます(onbeforeunload)<br>');
+                    return "アンロードされます(onbeforeunload)";
+                });
+            });
+        </script>
+    </body>
+</html>
